@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="content">
+    </div>
+    <button onclick="clickMe()">Click me</button> -->
+
+    <input type="text" id="txtSoa">
+    <input type="text" id="txtSob">
+    <input type="text" id="txtKetqua" readonly> 
+    <button id="btnClick" onclick="calculate()">calculate</button>
+</body>
+
+<script>
+    // var temp = true;
+    // function clickMe(){
+    //     // if (temp == true) document.getElementById('content').innerHTML = 'Show';        
+    //     // else document.getElementById('content').innerHTML = '';
+    //     // temp = !temp;   
+
+    //     // var content = document.getElementById('content')
+    //     // temp == true ? content.innerHTML = 'Show' : content.innerHTML = ''; 
+    //     // temp = !temp; 
+    // }
+
+    document.getElementById('btnClick').onclick = function(){
+        var a = document.getElementById('txtSoa')
+        var b = document.getElementById('txtSob')
+        var Ketqua = document.getElementById('txtKetqua')
+
+        if(isNaN(a.value)){
+            alert('vui long nhap so')
+            a.focus()
+            a.value = ''
+            return
+        }
+        if(isNaN(b.value)){
+            alert('vui long nhap so')
+            b.focus()
+            b.value = ''
+            return
+        }
+
+        a = parseInt(a.value);
+        b = parseInt(b.value);      
+        Ketqua.value = calculate(a,b)
+        
+    }
+    function calculate(a,b){
+    return a+b
+}
+        
+</script>
+</html>
