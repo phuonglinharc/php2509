@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtSoa">
+    <input type="text" id="txtSob">
+    <input type="text" id="txtKetqua" readonly>
+    
+    <button onclick="calculator" id="btnTinh">Calcultator</button>
+</body>
+
+<script>
+    document.getElementById('btnTinh').onclick = function(){
+        var Soa = document.getElementById('txtSoa')
+        var Sob = document.getElementById('txtSob')
+        var Ketqua = document.getElementById('txtKetqua')
+
+        if(isNaN(Soa.value)){
+            alert('vui long nhap so')
+            Soa.focus()
+            Soa.value=''
+            return
+        }
+        if(isNaN(Sob.value)){
+            alert('vui long nhap so')
+            Sob.focus()
+            Sob.value=''
+            return
+        }
+        Soa = parseInt(Soa.value)
+        Sob = parseInt(Sob.value)
+        Ketqua.value = calculator(Soa,Sob)
+    
+    }
+    function calculator(Soa,Sob){
+        return Soa+Sob
+    }
+</script>
+</html>

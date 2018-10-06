@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+        <img src="../images/off.png" alt="" id="light">
+    </div>
+    <button onclick="turnLight()" id="btnTurn">Turn on</button>
+</div>
+</body>
+
+<script>
+    document.getElementById('container').style.margin = 'auto'
+    document.getElementById('container').style.width = '130px'
+    function turnLight(){
+        var light = document.getElementById('light')
+        var btnTurn = document.getElementById('btnTurn')
+
+        if(btnTurn.innerText == "Turn on"){
+            light.src = '../images/on.png'
+            btnTurn.innerHTML = 'Turn off'
+        }
+        else{
+            light.src = '../images/off.png'
+            btnTurn.innerText = "Turn on"
+        }
+    }
+</script>
+</html>
