@@ -8,7 +8,7 @@
 </head>
 <body>
     <input type="text" class="txtSoa">
-    <select name="" id="txtPheptinh">
+    <select name="" class="txtPheptinh">
         <option value="+">+</option>
         <option value="-">-</option>
         <option value="*">*</option>
@@ -18,9 +18,57 @@
     <input type="text" class="txtSob">
     <input type="text" class="txtKetqua" readonly>
 
-    <button onclick="tinhtoan" id="calculator">Calculator</button>
+    <button>Calculator</button>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script></script>
+<script>
+$('button').click(function(){
+    var Soa = parseFloat($('.txtSoa').val())
+    var Sob = parseFloat($('.txtSob').val())
+    var Pheptinh = $('.txtPheptinh').val()
+    var kq
+
+    if(isNaN(Soa)){
+        alert('vui long nhap so')
+        $('.txtSoa').focus
+        $('.txtSoa').val('')
+        return
+    }
+    if(isNaN(Sob)){
+        alert('vui long nhap so')
+        $('.txtSob').focus
+        $('.txtSob').val('')
+        return
+    }
+
+    switch(Pheptinh){
+        case "+":
+            kq = Soa+Sob
+            break
+        case "-":
+            kq = Soa-Sob
+            break
+        case "*":
+            kq = Soa*Sob
+            break
+        case "/":
+            if(Sob == 0){
+                alert ('khong co phep chia cho 0')
+                return
+            }
+            kq = Soa/Sob
+            break
+        case "%":
+            if(Sob == 0){
+                    alert ('khong co phep chia cho 0')
+                    return
+                }
+            kq = Soa%Sob
+            break
+
+    }
+    $('.txtKetqua').val(kq)
+})
+</script>
 </html>
